@@ -1,0 +1,174 @@
+---
+title: HTML5 Form
+layout: simple
+---
+
+form#redemption method="post" autocomplete="off"
+  hgroup
+    h1 Oscar Redemption
+    h2 Here's your chance to set the record straight: tell us what year the wrong film go nominated, and which film <b>should</b> have received a nod...
+
+  fieldset
+    legend About the offending film (part 1 of 3)
+    div
+      label for="film" The film in question?
+      input id="film" name="film" type="text" placeholder="e.g. King Kong" required=""
+
+    div
+      label for="awardWon" Award Won
+      input id="awardWon" name="awardWon" type="text" list="awards"
+      datalist id="awards"
+        option value="Best Picture"
+        option value="Best Director"
+        option value="Best Adapted Screenplay"
+        option value="Best Original Screenplay"
+
+    div
+      label for="email" Your Email address
+      input id="email" name="email" type="email" placeholder="dwight.schults@gmail.com" required=""
+
+    div
+      label for="yearOfCrime" Year Of Crime
+      input id="yearOfCrime" name="yearOfCrime" type="number" min="1929" max="2015" required=""
+
+    div
+      label for="web" Your web address
+      input id="web" name="web" type="url" placeholder="www.mysite.com"
+
+    div
+      label for="tel" Telephone (so we can berate you if you're wrong)
+      input id="tel" name="tel" type="tel" placeholder="1-234-5678" autocomplete="off" required=""
+
+    div
+      label for="search" Search the site...
+      input id="search" name="search" type="search" placeholder="Wyatt Earp" autofocus=""
+
+    div
+      label for="name" Your Name (first and last)
+      input id="name" name="name" pattern="([a-zA-Z]{3,30}\s*)+[a-zA-Z]{3,30}" placeholder="Dwight Schultz" required=""
+
+    div
+      label for="color" Your favorite color
+      input id="color"name="color" type="color"
+
+    div
+      label for="date" Date
+      input id="date" type="date" name="date"
+    div
+      label for="month" Month
+      input id="month" type="month" name="month"
+    div
+      label for="week" Week
+      input id="week" type="week" name="week"
+    div
+      label for="time" Time
+      input id="time" type="time" name="time"
+    div
+      label for="datetime" Datetime
+      input id="datetime" type="datetime" name="datetime" step="14400"
+    div
+      label for="howYouRateIt" How you rate it
+      input id="howYouRateIt" name="howYouRateIt" type="range" min="1" max="10" value="5"
+      span id="range" 5
+
+  div
+    /input#submit type="submit" value="Submit"
+    button#submit Submit
+
+
+coffee:
+  rangeInput = document.getElementById('howYouRateIt')
+  rangeInput.onchange = (event) ->
+    showValue(this.value)
+  showValue = (newValue) ->
+    document.getElementById('range').innerHTML = newValue
+
+scss:
+  #redemption {
+    width: 100%;
+    font-weight: 400;
+
+    hgroup {
+      margin-bottom: 20px;
+    }
+
+    div {
+      width: 100%;
+      margin-bottom: 15px;
+      float: left;
+    }
+
+    span#range {
+      float: left;
+      font-size: 3em;
+      width: 100%;
+      color: red;
+      clear: both;
+      text-align: center;
+    }
+
+    #howYouRateIt, #yearOfCrime {
+      text-align: right;
+    }
+
+    legend {
+      font-style: italic;
+      color: #434242;
+      font-size: 0.8em;
+      margin-bottom: 20px;
+      float: left;
+      width: 100%;
+    }
+
+    fieldset {
+      border: 1px dotted #cccccc;
+      padding: 2%;
+      margin-bottom: 20px;
+      background: #ffffff;
+      background: linear-gradient(0deg, #ffffff 77%, #f2f2f2 100%);
+    }
+
+    label {
+      width: 40%;
+      float: left;
+    }
+
+    input {
+      box-sizing: inherit;
+      height: 20px;
+      font-size: 1em;
+      width: 40%;
+      float: right;
+    }
+
+    #submit {
+      /*display: block;*/
+      text-decoration: none;
+      height: 34px;
+      width: 40%;
+      font-size: 1.25em;
+      float: right;
+      background-color: #b01c20;
+      border-radius: 8px;
+      color: white;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      /*background: linear-gradient(top, red, blue);*/
+      box-shadow: 5px 5px 5px hsla(0, 0%, 26.667%, 0.8);
+      text-shadow: 0px 1px black;
+      border: 1px solid #bfbfbf;
+    }
+
+    input:not([type=range]), textarea, select {
+      border: 1px solid #bfbfbf;
+      padding: 0.2em;
+      font-size: 1.1em;
+      line-height: 1.2em;
+      background: #ffffff;
+      background: linear-gradient(0deg, #ededed 0%, #ffffff 8%, #ededed 100%);
+      border-radius: 4px;
+      box-shadow: 2px 2px 5px hsla(0, 0%, 16.667%, 0.1);
+    }
+
+  }
+
