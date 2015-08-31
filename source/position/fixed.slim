@@ -8,8 +8,8 @@ layout: simple
   .login-button 登陆
 
 #main
-  - 100.times do
-    p 帖子
+  - 100.times do |i|
+    p =  "帖子#{i}"
 
 #fixed-bottom
   .slogan 为兴趣而生，贴吧不懂你。
@@ -26,7 +26,7 @@ scss:
 
   .login-button {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 7px 20px;
     background-color: #3f89ec;
     border-radius: 2px;
     cursor: pointer;
@@ -41,6 +41,8 @@ scss:
     text-align: center;
     color: white;
     font-size: 26px;
+    // line-height 默认值是 normal，不等于 1 或 1em。
+    line-height: 1;
 
     *:not(:last-child) {
       margin-right: 10px;
