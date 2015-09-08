@@ -1,0 +1,15 @@
+---
+title: jQuery
+layout: jquery
+---
+
+h1 jQuery
+
+coffee:
+  base_url = '/jquery/data/'
+
+  $.getJSON base_url + 'foo.json', (data, status, xhr) ->
+    $('<pre>', text: data.file_name).appendTo($('body'))
+
+  $.getScript base_url + 'alert.js', (data, status, xhr) ->
+    console.log(arguments)
