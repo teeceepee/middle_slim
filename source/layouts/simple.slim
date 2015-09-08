@@ -9,5 +9,7 @@ html
     /! Use title if it's in the page YAML frontmatter
     title = data.page.title || "The Middleman"
 
+    == javascript_include_tag "jquery"
+
   body class="#{page_classes}"
     == yield

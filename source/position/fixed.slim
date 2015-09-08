@@ -15,6 +15,11 @@ layout: simple
   .slogan 为兴趣而生，贴吧不懂你。
   .login-button 登陆
 
+coffee:
+  $('.slogan').on 'click', (e) ->
+    $(e.target).parent().hide().show {duration: 1000, easing: 'swing'}
+
+
 scss:
   p {
     color: blue;
