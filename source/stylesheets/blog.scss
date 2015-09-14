@@ -1,0 +1,38 @@
+html {
+  font-size: 10px;
+}
+
+body {
+  background-color: rgb(236, 240, 241);
+  font-family: Helvetica, 'Hiragino Sans GB', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.main-header {
+  background-color: white;
+  margin-bottom: 20px;
+}
+
+.main-nav {
+  background-color: #2C3E50;
+  line-height: 48px;
+}
+
+.header-content {
+  text-align: center;
+  line-height: 100px;
+
+  h1 {
+    margin: 0 ;
+    font-size: 50px;
+    font-weight: 100;
+
+    a {
+      color: rgb(44, 62, 80);
+    }
+  }
+
+}
