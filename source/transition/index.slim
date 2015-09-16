@@ -1,0 +1,17 @@
+---
+layout: simple
+---
+
+h2.title Transition
+
+scss:
+  h2.title {
+    text-align: center;
+
+    &:hover {
+      color: red;
+      margin-top: 40px;
+    }
+
+    transition: all, 1s, ease;
+  }
