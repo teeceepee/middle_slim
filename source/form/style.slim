@@ -1,0 +1,50 @@
+---
+title: Form Style
+layout: bootstrap
+---
+
+h1 Form Style
+
+form#text-input
+  label for="text-input-text" 文本框
+  input type="text" id="text-input-text"
+  input type="submit" value="保存"
+
+scss:
+  #text-input {
+    /*color: rgb(50, 50, 50);*/
+
+    *:not(:last-child) {
+      margin-right: 12px;
+    }
+    input {
+      font-size: 13px;
+      line-height: 20px;
+      padding: 3px 12px;
+      border: 1px solid #ccc;
+      border-radius: 2px;
+    }
+
+    input[type=text] {
+      transition: all 0.15s;
+      &:hover {
+        border-color: #66afe9;
+      }
+
+      &:focus {
+        outline: 0;
+        box-shadow: 0 0 8px rgba(102,175,233,.6);
+        border-color: #66afe9;
+      }
+    }
+
+    input[type=submit] {
+      display: inline-block;
+      background-color: white;
+      cursor: pointer;
+
+      &:hover, &:focus {
+        background-color: #e6e6e6;
+      }
+    }
+  }

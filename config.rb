@@ -74,3 +74,4 @@ configure :build do
 end
 
 sprockets.import_asset 'jquery.js'
+sprockets.import_asset 'bootstrap.scss'
