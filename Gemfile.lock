@@ -97,6 +97,8 @@ GEM
     rails-assets-bootstrap (3.3.5)
       rails-assets-jquery (>= 1.9.1)
     rails-assets-jquery (2.1.4)
+    rails-assets-magnific-popup (1.0.0)
+      rails-assets-jquery (>= 1.8.0)
     rb-fsevent (0.9.5)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
@@ -135,6 +137,7 @@ DEPENDENCIES
   middleman-livereload (~> 3.1.0)
   rails-assets-bootstrap!
   rails-assets-jquery!
+  rails-assets-magnific-popup!
   slim (>= 2.0)
   tzinfo-data
   wdm (~> 0.1.0)

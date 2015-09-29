@@ -18,4 +18,5 @@ gem "tzinfo-data", platforms: [:mswin, :mingw]
 source 'https://rails-assets.org' do
   gem 'rails-assets-jquery'
   gem 'rails-assets-bootstrap'
+  gem 'rails-assets-magnific-popup'
 end
