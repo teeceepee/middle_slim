@@ -1,6 +1,6 @@
 ---
 layout: false
-image_source: "http://www.xxjxsj.cn/article/UploadPic/2009-10/2009101018545196251.jpg"
+image_source: http://www.xxjxsj.cn/article/UploadPic/2009-10/2009101018545196251.jpg
 ---
 
 doctype html
@@ -27,7 +27,18 @@ html
 
     javascript:
       $('.test-popup-link').magnificPopup({
-        type: 'image'
+        type: 'image',
+        closeOnContentClick: true,
+        closeBtnInside: false,
+        fixedContentPos: true,
+        //mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
+        image: {
+          verticalFit: true
+        },
+        zoom: {
+          enabled: true,
+          duration: 300 // don't foget to change the duration also in CSS
+        }
       });
 
     scss:
