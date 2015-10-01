@@ -1,0 +1,23 @@
+---
+layout: simple
+---
+
+- url = 'https://developer.mozilla.org/en-US/docs/Web/CSS/cursor'
+= link_to url, url, target: '_blank'
+
+- %w(auto default none context-menu help pointer progress wait cell crosshair text vertical-text alias copy move no-drop not-allowed e-resize n-resize ne-resize nw-resize s-resize se-resize sw-resize w-resize ew-resize ns-resize nesw-resize nwse-resize col-resize row-resize all-scroll zoom-in zoom-out grab grabbing).each do |style|
+  .box data-cursor=style
+    = style
+
+scss:
+  .box {
+    height: 100px;
+    width: 100px;
+    margin: 20px;
+    background-color: #ccc;
+    text-align: center;
+  }
+
+coffee:
+  $('.box').css 'cursor', ->
+    $(this).data('cursor')
