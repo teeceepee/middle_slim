@@ -10,6 +10,13 @@ form#text-input
   input type="text" id="text-input-text"
   input type="submit" value="保存"
 
+form#select
+  label for="number-select" 下拉框
+  select name="number" id="number-select"
+    - 10.times do |i|
+      option value=i
+        = i
+
 scss:
   #text-input {
     /*color: rgb(50, 50, 50);*/
@@ -20,6 +27,7 @@ scss:
     input {
       font-size: 13px;
       line-height: 20px;
+      width: 200px;
       padding: 3px 12px;
       border: 1px solid #ccc;
       border-radius: 2px;
@@ -45,6 +53,42 @@ scss:
 
       &:hover, &:focus {
         background-color: #e6e6e6;
+      }
+    }
+  }
+
+scss:
+  form {
+    margin-top: 20px;
+  }
+  #select {
+
+    *:not(:last-child) {
+      margin-right: 12px;
+    }
+
+    select {
+      border-radius: 0;
+      font-size: 13px;
+      line-height: 20px;
+      height: 28px;
+      width: 200px;
+      border: 1px solid #ccc;
+      /*take no effect*/
+      /*border-radius: 2px;*/
+      background-color: white;
+      /* !!! */
+      /*-webkit-appearance: none;*/
+      transition: all 0.15s;
+
+      &:hover {
+        border-color: #66afe9;
+      }
+
+      &:focus {
+        outline: 0;
+        box-shadow: 0 0 8px rgba(102, 175, 233, .6);
+        border-color: #66afe9;
       }
     }
   }
