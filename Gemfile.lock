@@ -99,6 +99,7 @@ GEM
     rails-assets-jquery (2.1.4)
     rails-assets-magnific-popup (1.0.0)
       rails-assets-jquery (>= 1.8.0)
+    rails-assets-pure (0.6.0)
     rb-fsevent (0.9.6)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
@@ -138,6 +139,7 @@ DEPENDENCIES
   rails-assets-bootstrap!
   rails-assets-jquery!
   rails-assets-magnific-popup!
+  rails-assets-pure!
   slim (>= 2.0)
   tzinfo-data
   wdm (~> 0.1.0)
