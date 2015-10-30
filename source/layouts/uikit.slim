@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    meta charset="utf-8"
+
+    meta name="viewport" content="width=device-width, initial-scale=1"
+
+    /! Use title if it's in the page YAML frontmatter
+    title = data.page.title || "The Middleman"
+
+    == stylesheet_link_tag 'uikit/uikit'
+    /== stylesheet_link_tag 'uikit/uikit.almost-flat'
+    == stylesheet_link_tag 'uikit/uikit.gradient'
+
+    == javascript_include_tag 'jquery'
+    == javascript_include_tag 'uikit/uikit'
+
+  body class="#{page_classes}"
+    == yield

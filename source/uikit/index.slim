@@ -1,0 +1,15 @@
+---
+layout: uikit
+---
+
+- (1..6).each do |i|
+  h1 class="uk-h#{i}"
+    = "h#{i} Heading #{i}"
+
+.uk-grid.uk-grid-small
+  - 50.times do
+    .uk-width-1-5
+      .uk-panel.uk-panel-box
+        .uk-panel-badge.uk-badge.uk-badge-danger Hot
+        h3.uk-panel-title Box
+        | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

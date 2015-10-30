@@ -20,4 +20,5 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap'
   gem 'rails-assets-magnific-popup'
   gem 'rails-assets-pure'
+  gem 'rails-assets-uikit'
 end

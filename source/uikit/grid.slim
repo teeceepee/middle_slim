@@ -1,0 +1,80 @@
+---
+layout: uikit
+---
+
+h2 Usage
+
+.uk-grid
+  - 3.times do
+    .uk-width-1-3
+      .uk-panel.uk-panel-box
+        code .uk-width-1-3
+
+.uk-grid
+  - 2.times do
+    .uk-width-1-2
+      .uk-panel.uk-panel-box
+        code .uk-width-1-2
+
+.uk-grid
+  .uk-width-3-10
+    .uk-panel.uk-panel-box
+      code .uk-width-3-10
+  .uk-width-7-10
+    .uk-panel.uk-panel-box
+      code .uk-width-7-10
+
+h2 Responsive Width
+
+/.uk-grid data-uk-grid-margin=""
+.uk-grid
+  .uk-width-medium-1-2.uk-width-large-1-3
+    .uk-panel.uk-panel-box.uk-panel-box-primary
+      code .uk-width-medium-1-2
+      code .uk-width-large-1-3
+  .uk-hidden-medium.uk-width-large-1-3
+    .uk-panel.uk-panel-box
+      code .uk-hidden-medium
+      code .uk-width-large-1-3
+  .uk-width-medium-1-2.uk-width-large-1-3
+    .uk-panel.uk-panel-box.uk-panel-box-primary
+      code .uk-width-medium-1-2
+      code .uk-width-large-1-3
+
+/.uk-grid data-uk-grid-margin=""
+.uk-grid
+  .uk-width-medium-1-3.uk-width-1-2
+    .uk-panel.uk-panel-box.uk-panel-box-secondary
+      code .uk-width-1-2
+      code .uk-width-medium-1-3
+  .uk-width-medium-1-3.uk-hidden-small
+    .uk-panel.uk-panel-box
+      code .uk-hidden-small
+      code .uk-width-medium-1-3
+  .uk-width-medium-1-3.uk-width-1-2
+    .uk-panel.uk-panel-box.uk-panel-box-secondary
+      code .uk-width-1-2
+      code .uk-width-medium-1-3
+
+/.uk-grid data-uk-grid-margin=""
+.uk-grid
+  .uk-width-1-1.uk-visible-small
+    .uk-panel.uk-panel-box.uk-panel-box-secondary
+      code .uk-width-1-1 .uk-visible-small
+  .uk-width-medium-1-1.uk-visible-medium
+    .uk-panel.uk-panel-box.uk-panel-box-primary
+      code .uk-width-medium-1-1 .uk-visible-medium
+  .uk-width-large-1-1.uk-visible-large
+    .uk-panel.uk-panel-box
+      code .uk-width-large-1-1 .uk-visible-large
+
+h2 Grid gutter
+
+- gutter_types = ['', 'uk-grid-medium', 'uk-grid-small', 'uk-grid-collapse']
+
+- gutter_types.each do |gutter_type|
+  .uk-grid class=gutter_type
+    - 3.times do
+      .uk-width-1-3
+        .uk-panel.uk-panel-box.uk-panel-box-primary Lorem ipsum
+  hr.uk-article-divider
