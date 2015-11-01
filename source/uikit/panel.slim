@@ -1,0 +1,129 @@
+---
+layout: uikit
+---
+
+h2 Usage
+
+.uk-panel.uk-panel-box.uk-width-medium-1-3
+  .uk-panel-badge.uk-badge.uk-badge-danger Hot
+  .uk-panel-title Title
+  | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+hr.uk-article-divider
+
+h3 Panels in a grid
+
+.uk-grid data-uk-grid-margin=""
+  - 2.times do
+    .uk-width-medium-1-2
+      .uk-panel.uk-panel-box
+        .uk-panel-title Title
+        | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+
+hr.uk-article-divider
+
+h2 Modifiers
+
+h3 Panel box
+
+.uk-grid data-uk-grid-margin=""
+  - 3.times do
+    .uk-width-medium-1-3
+      .uk-panel.uk-panel-box
+        .uk-panel-title Title
+        | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+        code .uk-panel-box
+
+hr.uk-article-divider
+
+h3 Panel box primary
+
+.uk-grid data-uk-grid-margin=""
+  - 3.times do
+    .uk-width-medium-1-3
+      .uk-panel.uk-panel-box.uk-panel-box-primary
+        .uk-panel-title Title
+        | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+        code .uk-panel-box-primary
+
+hr.uk-article-divider
+
+h3 Panel hover
+
+.uk-grid data-uk-grid-margin=""
+  - 3.times do
+    .uk-width-medium-1-3
+      a.uk-panel.uk-panel-hover
+        .uk-panel-title Title
+        | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+        code .uk-panel-hover
+
+hr.uk-article-divider
+
+h3 Panel header
+
+.uk-grid data-uk-grid-margin=""
+  - 3.times do
+    .uk-width-medium-1-3
+      .uk-panel.uk-panel-header
+        .uk-panel-title Title
+        | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+        code .uk-panel-header
+
+hr.uk-article-divider
+
+h3 Panel space
+
+.uk-grid data-uk-grid-margin=""
+  - 3.times do
+    .uk-width-medium-1-3
+      .uk-panel.uk-panel-space
+        .uk-panel-title Title
+        | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+        code .uk-panel-space
+
+hr.uk-article-divider
+
+h3 Panel divider
+
+.uk-grid
+  .uk-width-medium-1-2
+    - 3.times do
+      .uk-panel.uk-panel-divider
+        .uk-panel-title Title
+        | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+        code .uk-panel-divider
+
+hr.uk-article-divider
+
+h2 Panel box with teaser
+
+.uk-width-medium-1-3
+  .uk-panel.uk-panel-box
+    .uk-panel-teaser
+      = image_tag('placeholder_800x280.svg')
+    p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+
+hr.uk-article-divider
+
+h2 Panel with icons
+
+.uk-grid data-uk-grid-margin=""
+  .uk-width-medium-1-3
+    .uk-panel.uk-panel-box
+      h3.uk-panel-title
+        i.uk-icon-user
+        | &nbsp;Panel
+      | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  .uk-width-medium-1-3
+    .uk-panel.uk-panel-box
+      h3.uk-panel-title
+        i.uk-icon-home
+        | &nbsp;Panel
+      | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  .uk-width-medium-1-3
+    .uk-panel.uk-panel-box
+      h3.uk-panel-title
+        i.uk-icon-bookmark
+        | &nbsp;Panel
+      | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
