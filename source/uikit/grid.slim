@@ -24,6 +24,8 @@ h2 Usage
     .uk-panel.uk-panel-box
       code .uk-width-7-10
 
+hr.uk-article-divider
+
 h2 Responsive Width
 
 /.uk-grid data-uk-grid-margin=""
@@ -68,6 +70,8 @@ h2 Responsive Width
     .uk-panel.uk-panel-box
       code .uk-width-large-1-1 .uk-visible-large
 
+hr.uk-article-divider
+
 h2 Grid gutter
 
 - gutter_types = ['', 'uk-grid-medium', 'uk-grid-small', 'uk-grid-collapse']
@@ -78,3 +82,113 @@ h2 Grid gutter
       .uk-width-1-3
         .uk-panel.uk-panel-box.uk-panel-box-primary Lorem ipsum
   hr.uk-article-divider
+
+hr.uk-article-divider
+
+h2 Nested grid
+
+.uk-grid
+  .uk-width-1-2
+    .uk-panel.uk-panel-box
+      code .uk-width-1-2
+  .uk-width-1-2
+    .uk-grid
+      - 2.times do
+        .uk-width-1-2
+          .uk-panel.uk-panel-box.uk-panel-box-primary
+            code .uk-width-1-2
+
+hr.uk-article-divider
+
+h2 Center grid
+
+.uk-panel.uk-panel-box.uk-panel-box-primary.uk-width-1-2.uk-container-center.uk-text-center
+  code .uk-container-center
+
+hr.uk-article-divider
+
+h2 Grid divider
+
+- 2.times do
+  .uk-grid.uk-grid-divider
+    - 3.times do
+      .uk-width-medium-1-3
+        .uk-panel.uk-panel-box
+          code .uk-width-medium-1-3
+  hr.uk-grid-divider
+
+hr.uk-article-divider
+
+h2 Source ordering
+
+.uk-grid
+  .uk-width-medium-1-2.uk-push-1-2
+    .uk-panel.uk-panel-box
+      code 1 .uk-width-medium-1-2 .uk-push-1-2
+  .uk-width-medium-1-2.uk-pull-1-2
+    .uk-panel.uk-panel-box
+      code 2 .uk-width-medium-1-2 .uk-pull-1-2
+
+.uk-grid
+  .uk-width-medium-2-5.uk-push-3-5
+    .uk-panel.uk-panel-box
+      code 1 .uk-width-medium-2-5 .uk-push-3-5
+  .uk-width-medium-3-5.uk-pull-2-5
+    .uk-panel.uk-panel-box
+      code 2 .uk-width-medium-3-5.uk-pull-2-5
+
+hr.uk-article-divider
+
+h2 Match column heights
+
+.uk-grid.uk-grid-divider data-uk-grid-match="{row: false}"
+  - 2.times do
+    .uk-width-medium-1-3
+      | Lorem ipsum dolor sit amet.
+    .uk-width-medium-1-3
+      | Lorem ipsum dolor sit amet.
+  .uk-width-medium-1-3
+    | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+
+hr.uk-article-divider
+
+h3 Match height of panels
+
+.uk-grid.uk-grid-match data-uk-grid-match="{target:'.uk-panel'}"
+  .uk-width-medium-1-3
+    .uk-panel.uk-panel-box
+      | Lorem ipsum dolor sit amet.
+  .uk-width-medium-1-3
+    .uk-panel.uk-panel-box
+      | Lorem ipsum dolor sit amet.
+  .uk-width-medium-1-3
+    .uk-panel.uk-panel-box
+      | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+
+hr.uk-article-divider
+
+h2 Wrap multiple rows
+
+ul.uk-grid data-uk-grid-margin=""
+  - widths = %w(120 140 160 180 200 220 240)
+  - widths.each do |width|
+    li.uk-width style="width: #{width}px;"
+      .uk-panel.uk-panel-box = "#{width}px"
+
+hr.uk-article-divider
+
+h2 Even grid columns
+
+ul.uk-grid.uk-grid-width-1-5
+  - 5.times do
+    li
+      .uk-panel.uk-panel-box Box
+
+hr.uk-article-divider
+
+h3 Responsive width
+
+ul.uk-grid.uk-grid-width-1-2.uk-grid-width-medium-1-3.uk-grid-width-large-1-5 data-uk-grid-margin=""
+  - 5.times do
+    li
+      .uk-panel.uk-panel-box Box
