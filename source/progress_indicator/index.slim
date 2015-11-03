@@ -1,0 +1,61 @@
+---
+layout: simple
+---
+
+ul.progress-bar
+  li
+    div step1
+    .icon 1
+  li
+    div step2
+    .icon 2
+  li
+    div step3
+    .icon 3
+
+scss:
+  $li-width: 180px;
+  $line-percent: 0.8;
+  $left-offset: -($li-width * $line-percent) / 2;
+  * {
+    box-sizing: border-box;
+  }
+  .progress-bar {
+    padding: 20px;
+    li {
+      list-style-type: none;
+      border: 1px dotted grey;
+      position: relative;
+      display: inline-block;
+      height: 100px;
+      width: $li-width;
+
+      .icon {
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        background-color: rgb(0, 80%, 0);
+        position: absolute;
+        top: 40px;
+        left: 80px;
+        text-align: center;
+        line-height: 20px;
+      }
+
+      &:first-child:after {
+        content: none;
+      }
+
+      &:after {
+        content: '';
+        height: 2px;
+        width: $line-percent * 100%;
+        background: #AAA;
+        position: absolute;
+        top: 49px;
+        left: $left-offset;
+
+      }
+    }
+
+  }
