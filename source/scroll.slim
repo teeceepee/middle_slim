@@ -1,0 +1,38 @@
+---
+layout: jquery
+---
+
+.outer
+  - 10.times do |i|
+    .inner = i
+
+
+scss:
+  .outer {
+    border: 1px solid gray;
+    padding: 10px;
+
+    height: 1000px;
+
+    overflow: auto;
+  }
+
+  .inner {
+    border: 2px solid teal;
+    margin-bottom: -2px;
+    height: 600px;
+  }
+
+javascript:
+  $('.outer').on('mousewheel', function(e) {
+
+    var deltaY = e.originalEvent.deltaY;
+    var scrollTop = $(this).scrollTop();
+    console.log(deltaY);
+
+    $(this).scrollTop(scrollTop + deltaY);
+    e.preventDefault();
+  });
+
+
+
