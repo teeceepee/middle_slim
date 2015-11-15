@@ -1,0 +1,24 @@
+---
+layout: flexbox
+title: flex-flow
+---
+
+h2 flex-flow (direction: ltr;)
+
+
+
+- flex_directions = %w(row row-reverse column column-reverse)
+- flex_wraps = %w(nowrap wrap wrap-reverse)
+- flex_flows = flex_directions.map do |flex_direction|
+  - flex_wraps.map do |flex_wrap|
+    - [flex_direction, flex_wrap].join(' ')
+- flex_flows.flatten!
+
+- flex_flows.each do |flex_flow|
+  h3
+    code
+      = "flex-flow: #{flex_flow}"
+  .flex-container style="flex-flow: #{flex_flow}"
+    - 10.times do |i|
+      .flex-item = i
+
