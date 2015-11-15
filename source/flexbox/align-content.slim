@@ -1,0 +1,21 @@
+---
+layout: flexbox
+title: align-content
+---
+
+h2 align-content
+
+- align_contents = %w(flex-start flex-end center space-between space-around stretch)
+
+- flex_directions = %w(row column)
+
+- flex_directions.each do |flex_direction|
+  - align_contents.each do |align_content|
+    - styles = ["flex-direction: #{flex_direction}", "align-content: #{align_content}", 'flex-wrap: wrap']
+    h3
+      pre
+        = styles.join("\n")
+
+    .flex-container style="#{styles.join(';')}"
+      - 8.times do |i|
+        .flex-item = i
