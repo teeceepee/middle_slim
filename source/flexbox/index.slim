@@ -1,0 +1,12 @@
+---
+layout: simple
+title: Flexbox index
+---
+
+h1 Flexbox Index
+
+- pages = %W(flex-flow justify-content align-content align-item)
+
+- pages.each do |page|
+  p
+    = link_to page, "/flexbox/#{page}.html"

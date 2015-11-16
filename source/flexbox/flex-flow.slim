@@ -3,9 +3,7 @@ layout: flexbox
 title: flex-flow
 ---
 
-h2 flex-flow (direction: ltr;)
-
-
+h2 flex-flow
 
 - flex_directions = %w(row row-reverse column column-reverse)
 - flex_wraps = %w(nowrap wrap wrap-reverse)
@@ -21,4 +19,3 @@ h2 flex-flow (direction: ltr;)
   .flex-container style="flex-flow: #{flex_flow}"
     - 10.times do |i|
       .flex-item = i
-
