@@ -1,0 +1,42 @@
+---
+layout: simple
+title: Gradient
+---
+
+.box.rainbow
+.box.black-white
+.box.red-blue
+.box.transparency
+
+css:
+  .box {
+    width: 400px;
+    height: 250px;
+    margin: 5px;
+  }
+
+  .rainbow {
+    background: linear-gradient(
+            hsl(0, 100%, 50%),
+            hsl(45, 100%, 50%),
+            hsl(90, 100%, 50%),
+            hsl(135, 100%, 50%),
+            hsl(180, 100%, 50%),
+            hsl(225, 100%, 50%),
+            hsl(270, 100%, 50%),
+            hsl(315, 100%, 50%),
+            hsl(360, 100%, 50%)
+    );
+  }
+
+  .black-white {
+    background: linear-gradient(to right, black 20%, white 120%);
+  }
+
+  .red-blue {
+    background: linear-gradient(135deg, red, blue);
+  }
+
+  .transparency {
+    background: linear-gradient(45deg, hsla(0, 100%, 50%, 1), hsla(0, 100%, 50%, 0));
+  }
