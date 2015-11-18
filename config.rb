@@ -75,6 +75,7 @@ end
 
 sprockets.import_asset 'jquery.js'
 sprockets.import_asset 'bootstrap.scss'
+sprockets.import_asset 'bootstrap.js'
 sprockets.import_asset 'magnific-popup.js'
 sprockets.import_asset 'magnific-popup.scss'
 sprockets.import_asset 'pure.scss'

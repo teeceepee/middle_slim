@@ -1,0 +1,59 @@
+---
+layout: bootstrap
+title: Affix Demo
+---
+
+<div style="height: 100px;">
+
+</div>
+
+<div class="col-md-3 scrollspy">
+  <ul id="nav" class="nav hidden-xs hidden-sm" data-spy="affix">
+    <li>
+      <a href="#web-design">Web Design</a>
+    </li>
+    <li>
+      <a href="#web-development">Web Development</a>
+      <ul class="nav">
+        <li>
+          <a href="#ruby">
+            <span class="fa fa-angle-double-right"></span>Ruby
+          </a>
+        </li>
+        <li>
+          <a href="#python">
+            <span class="fa fa-angle-double-right"></span>Python
+          </a>
+        </li>
+
+      </ul><!--end of sub navigation-->
+    </li>
+
+  </ul><!-- end of main navigation -->
+</div>
+<div class="col-md-9" style="height: 1000px; background-color: teal">
+  <section id="web-design">
+  </section>
+  <section id="web-development">
+    <section id="ruby">
+    </section>
+    <section id="python">
+    </section>
+
+  </section>
+</div>
+
+<script>
+  $('#nav').affix({
+    offset: {
+      top: $('#nav').offset().top - 10
+    }
+  });
+</script>
+
+<style>
+  .affix {
+    top: 10px;
+    /*width: 213px;*/
+  }
+</style>

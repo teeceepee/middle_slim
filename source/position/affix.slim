@@ -1,0 +1,73 @@
+---
+layout: bootstrap
+title: Affix
+---
+
+.header
+
+
+.wrapper
+  .sidebar-wrapper
+    .sidebar data-spy="affix" data-offset-top="90"
+
+  .main-content
+
+.footer
+  - 10.times do
+    div = 'footer ' * 10
+
+
+scss:
+
+  @mixin clearfix {
+    &:before, &:after {
+      display: table;
+      content: "";
+    }
+
+    &:after {
+      clear: both;
+    }
+  }
+
+  .header {
+    height: 100px;
+  }
+
+  .wrapper {
+    /*position: relative;*/
+
+    @include  clearfix;
+
+  }
+
+  .sidebar-wrapper {
+    width: 20%;
+    height: 300px;
+    @include clearfix;
+
+    float: left;
+  }
+
+  .sidebar {
+    width: 100px;
+    height: 300px;
+    background-color: bisque;
+
+    float: left;
+  }
+
+  .main-content {
+    width: 60%;
+    min-height: 1000px;
+    background-color: gray;
+    float: left;
+    right: 50%;
+  }
+
+  .sidebar {
+  }
+
+  .affix {
+    top: 10px;
+  }
