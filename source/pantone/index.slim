@@ -1,0 +1,40 @@
+---
+layout: simple
+title: Pantone Spring 2016
+---
+
+- colors = { \
+    'Rose Quartz' => '#F7CAC9',
+    'Peach Echo' => '#F7786B',
+    'Serenity' => '#91A8D0',
+    'Snorkel Blue' => '#034F84',
+    'Buttercup' => '#FAE03C',
+    'Limpet Shell' => '#98DDDE',
+    'Lilac Gray' => '#9896A4',
+    'Flesta' => '#DD4132',
+    'Iced Coffee' => '#B18F6A',
+    'Green Flash' => '#79C753',
+  }
+
+.colors
+  - colors.each do |name, value|
+    .color-block style="background-color: #{value}"
+      p = value
+      p = name
+
+
+scss:
+  .colors {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .color-block {
+    width: 80px;
+    height: 120px;
+    border: 1px solid #c2c2c2;
+    padding: 5px;
+
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
