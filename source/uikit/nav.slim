@@ -1,0 +1,115 @@
+---
+layout: uikit
+---
+
+h2 Usage
+
+.uk-width-medium-1-3
+  ul.uk-nav.uk-nav-side
+    li.uk-active
+      a href="#" Active
+    li
+      a href="#" Item
+    li
+      a href="#" Item
+
+hr.uk-article-divider
+
+h3 Nested navs
+
+.uk-width-medium-1-3
+  ul.uk-nav.uk-nav-side.uk-nav-parent-icon
+    li.uk-active
+      a href="#" Active
+    li.uk-parent.uk-open
+      a href="#" Parent
+      ul.uk-nav-sub
+        li
+          a href="#" Sub item
+        li
+          a href="#" Sub item
+          ul.uk-nav-sub
+            li
+              a href="#" Sub item
+            li
+              a href="#" Sub item
+
+hr.uk-article-divider
+
+h3 Accordion
+
+.uk-grid
+  .uk-width-medium-1-2.uk-row-first
+    p
+      code data-uk-nav
+    ul.uk-nav.uk-nav-side.uk-nav-parent-icon.uk-width-medium-2-3 data-uk-nav=""
+      li.uk-active
+        a href="#" Active
+      li
+        a href="#" Item
+      li.uk-parent
+        a href="#" Parent
+        ul.uk-nav-sub
+          li
+            a href="#" Sub item
+          li
+            a href="#" Sub item
+            ul.uk-nav-sub
+              li
+                a href="#" Sub item
+              li
+                a href="#" Sub item
+      li.uk-parent
+        a href="#" Parent
+        ul.uk-nav-sub
+          li
+            a href="#" Sub item
+          li
+            a href="#" Sub item
+
+  .uk-width-medium-1-2.uk-row-first
+    p
+      code
+        | data-uk-nav="{multiple:true}"
+    ul.uk-nav.uk-nav-side.uk-nav-parent-icon.uk-width-medium-2-3 data-uk-nav="{multiple:true}"
+      li.uk-active
+        a href="#" Active
+      li
+        a href="#" Item
+      li.uk-parent
+        a href="#" Parent
+        ul.uk-nav-sub
+          li
+            a href="#" Sub item
+          li
+            a href="#" Sub item
+            ul.uk-nav-sub
+              li
+                a href="#" Sub item
+              li
+                a href="#" Sub item
+      li.uk-parent
+        a href="#" Parent
+        ul.uk-nav-sub
+          li
+            a href="#" Sub item
+          li
+            a href="#" Sub item
+
+hr.uk-article-divider
+
+h3 Header and divider
+
+.uk-width-medium-1-3
+  ul.uk-nav.uk-nav-side
+    li.uk-nav-header
+      | Header
+    li
+      a href="#"
+        | Item
+        div Subtitle
+    li
+      a href="#" Item
+    li.uk-nav-divider
+    li
+      a href="#" Item
