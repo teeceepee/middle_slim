@@ -100,6 +100,7 @@ GEM
     rails-assets-magnific-popup (1.0.0)
       rails-assets-jquery (>= 1.8.0)
     rails-assets-pure (0.6.0)
+    rails-assets-react (0.14.3)
     rails-assets-uikit (2.23.0)
       rails-assets-jquery (>= 1.9.0)
     rb-fsevent (0.9.6)
@@ -142,6 +143,7 @@ DEPENDENCIES
   rails-assets-jquery!
   rails-assets-magnific-popup!
   rails-assets-pure!
+  rails-assets-react!
   rails-assets-uikit!
   slim (>= 2.0)
   tzinfo-data

@@ -1,0 +1,119 @@
+---
+layout: bilibili
+title: Bilibii gifs
+originalUrl: http://www.bilibili.com/index/index-icon.json
+---
+
+h1 Bilibili GIFs
+
+#gifs-container
+
+footer
+
+javascript:
+  var Gif = React.createClass({
+    displayName: 'Gif',
+
+    href: function() {
+      return this.props.gif.links[0];
+    },
+
+    img: function() {
+      return React.createElement('img', {
+        src: this.props.gif.icon,
+        title: this.props.gif.title,
+        alt: this.props.gif.title
+      });
+    },
+
+    title: function() {
+      return React.createElement(
+        'div',
+        null,
+        React.createElement(
+          'a',
+          {
+            className: 'search-link',
+            href: this.href(),
+            target: '_blank'
+          },
+          this.props.gif.title
+        )
+      );
+    },
+
+    a: function() {
+      return React.createElement('a', {title: this.props.gif.title, target: '_blank'}, this.img());
+    },
+
+    render: function() {
+      return React.createElement(
+        'div',
+        {className: 'gif'},
+        this.title(),
+        this.a());
+    }
+  });
+
+  var GifList = React.createClass({
+    displayName: 'GifList',
+
+    gifs: function(gifs) {
+      return gifs.map(function(gif) {
+        return React.createElement(Gif, {gif: gif})
+      });
+    },
+    render: function() {
+      nodes = this.gifs(this.props.gifs);
+      return React.createElement('div', {className: 'gif-list'}, nodes);
+    }
+  });
+
+  var renderAll = function(gifs) {
+    ReactDOM.render(
+      React.createElement(GifList, {gifs: gifs}),
+      document.getElementById('gifs-container')
+    );
+  };
+
+
+  var url = 'json_string.json';
+  var xhr = $.ajax({
+    url: url,
+    method: 'get',
+    dateType: 'json'
+  }).done(function(data) {
+    var gifs = data.fix;
+    renderAll(gifs);
+  });
+
+css:
+  body {
+    margin:  auto 30px;
+  }
+
+  .gif {
+    display: inline-block;
+    width: 180px;
+    height: 80px;
+    margin: 10px;
+    border-bottom: 1px dotted hsl(0, 0%, 80%);
+    text-align: center;
+  }
+
+  .gif img {
+    transition: transform 0.2s;
+  }
+
+  .gif img:hover {
+    transform: scale(2);
+  }
+
+  .search-link {
+    color: hsl(200, 100%, 50%);
+  }
+
+  footer {
+    border-top: 1px solid hsl(0, 0%, 90%);
+    min-height: 100px;
+  }
