@@ -20,4 +20,5 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-pure'
   gem 'rails-assets-uikit'
   gem 'rails-assets-react'
+  gem 'rails-assets-mustache'
 end
