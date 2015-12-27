@@ -1,0 +1,42 @@
+---
+layout: backbone
+---
+
+#app
+  h1#title Backbone
+
+
+
+javascript:
+  var AppView = Backbone.View.extend({
+    el: '#app',
+
+    events: {
+      'click #title': 'clickTitle',
+      'click h1': 'clickH1',
+    },
+
+    initialize: function () {
+      console.log('initialize');
+    },
+
+    render: function () {
+      console.log('render');
+    },
+
+    clickTitle: function () {
+      console.log('clickTitle');
+    },
+
+    clickH1: function () {
+      console.log('clickH1');
+    },
+
+  });
+
+  var app;
+  $(document).ready(function() {
+    app = new AppView();
+  });
+
+
