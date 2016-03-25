@@ -1,0 +1,48 @@
+---
+layout: bilibili
+title: Bilibii gifs
+---
+
+<h1>
+  Bilibili GIFs
+</h1>
+
+<div id="gifs-container"></div>
+
+<footer></footer>
+
+<script id="tmpl" type="x-tmpl-mustache">
+  <div class="gif-list">
+    {{#.}}
+    <div class="gif">
+      <div>
+        <a href="{{links.0}}" class="search-link" target="_blank">{{title}}</a>
+      </div>
+      <a>
+        <img src="{{icon}}" title="{{title}}">
+      </a>
+    </div>
+    {{/.}}
+  </div>
+</script>
+
+
+<script>
+  var tmpl = $('#tmpl').html();
+
+  var renderAll = function(gifs) {
+    var html = Mustache.render(tmpl, gifs);
+    $('#gifs-container').html(html);
+  };
+
+  var url = 'json_string.json';
+  var xhr = $.ajax({
+    url: url,
+    method: 'get',
+    dateType: 'json'
+  }).done(function (data) {
+    var gifs = data.fix;
+    console.log(gifs);
+    renderAll(gifs);
+  });
+</script>
