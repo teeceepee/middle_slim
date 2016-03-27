@@ -1,0 +1,31 @@
+---
+layout: backbone
+---
+
+javascript:
+  var R = Backbone.Router.extend({
+    routes: {
+      '': 'index',
+      'foo': 'foo',
+      'search/:query': 'search'
+    },
+
+    initialize: function () {
+    },
+
+    index: function () {
+      console.log('index');
+      $(document.body).append('index loaded');
+    },
+
+    foo: function () {
+      console.log('foo');
+    },
+
+    search: function () {
+    }
+  });
+
+  var r = new R();
+  Backbone.history.start();
+
