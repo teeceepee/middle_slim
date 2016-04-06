@@ -1,5 +1,7 @@
 source 'https://ruby.taobao.org'
 
+gem 'capistrano', '3.4.0'
+
 gem "middleman", "~>3.3.12"
 gem "slim", ">= 2.0"
 
