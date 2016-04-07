@@ -1,8 +1,8 @@
 # config valid only for current version of Capistrano
 lock '3.4.0'
 
-set :application, 'my_app_name'
-set :repo_url, 'git@example.com:me/my_repo.git'
+set :application, 'middle_slim'
+set :repo_url, 'https://github.com/teeceepee/middle_slim'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -45,4 +45,42 @@ namespace :deploy do
     end
   end
 
+end
+
+desc "Report Uptimes"
+task :uptime do
+  on roles(:all) do |host|
+    execute :ls
+    info "Host #{host} (#{host.roles.to_a.join(', ')}):\t#{capture(:uptime)}"
+  end
+end
+
+set :tarball_name, 'build.tar.gz'
+
+desc 'Deploy with local tarball'
+task 'tarball_deploy' do
+  # compress
+  sh %(bin/middleman build)
+  # sh %(scp -r build/ #{fetch(:server)}:#{release_path})
+
+  # upload tarball
+  tarball_name = 'build.tar.gz'
+  sh %(tar -czf #{tarball_name} build/)
+  sh %(scp #{tarball_name} #{fetch(:server)}:#{release_path})
+
+  # uncompress tarball remotely
+  on roles(:all) do
+    within release_path do
+      execute :tar, '-xvf', fetch(:tarball_name)
+    end
+  end
+end
+
+desc 'Extract tarball'
+task 'extract' do
+  on roles(:all) do
+    within release_path do
+      execute :tar, '-xvf', fetch(:tarball_name)
+    end
+  end
 end
