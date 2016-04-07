@@ -47,6 +47,27 @@ namespace :deploy do
 
 end
 
+## Add after init
+
+# config for capistrano-bundler
+set :bundle_bins, fetch(:bundle_bins, []).push('middleman')
+
+# config for capistrano-rbenv
+set :rbenv_ruby, '2.3.0'
+set :rbenv_map_bins, fetch(:rbenv_map_bins, []).push('middleman')
+
+desc "Foo"
+task :foo do
+  on roles(:all) do
+    within release_path do
+      # puts "bundler #{fetch(:bundle_bins)}"
+      # puts "rbenv #{fetch(:bundle_bins)}"
+      # execute :echo, '$PATH'
+      # # execute :middleman, 'version'
+    end
+  end
+end
+
 desc "Report Uptimes"
 task :uptime do
   on roles(:all) do |host|
