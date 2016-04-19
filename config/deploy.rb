@@ -104,3 +104,14 @@ task 'extract' do
     end
   end
 end
+
+desc 'Build'
+task 'build' do
+  on roles(:all) do
+    within current_path do
+      execute :middleman, 'build'
+    end
+  end
+end
+
+after 'deploy:finished', 'build'
