@@ -15,6 +15,8 @@ GEM
     capistrano-bundler (1.1.4)
       capistrano (~> 3.1)
       sshkit (~> 1.2)
+    capistrano-nvm (0.0.6)
+      capistrano (~> 3.1)
     capistrano-rbenv (2.0.4)
       capistrano (~> 3.1)
       sshkit (~> 1.3)
@@ -157,6 +159,7 @@ PLATFORMS
 DEPENDENCIES
   capistrano (= 3.4.0)
   capistrano-bundler (= 1.1.4)
+  capistrano-nvm (= 0.0.6)
   capistrano-rbenv (= 2.0.4)
   middleman (~> 3.3.12)
   middleman-livereload (~> 3.1.0)

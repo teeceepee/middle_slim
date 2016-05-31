@@ -56,6 +56,11 @@ set :bundle_bins, fetch(:bundle_bins, []).push('middleman')
 set :rbenv_ruby, '2.3.0'
 set :rbenv_map_bins, fetch(:rbenv_map_bins, []).push('middleman')
 
+# config for capistrano-nvm
+set :nvm_type, :user
+set :nvm_node, 'v5.10.1'
+set :nvm_map_bins, fetch(:nvm_map_bins, []).push('middleman')
+
 desc "Foo"
 task :foo do
   on roles(:all) do
